@@ -14,7 +14,7 @@ bun add <paket-ismi>
 
 Projede çevresel değişkenler (environment variables) .env dosyası ile yönetilmektedir.
 Örnek bir .env dosyası aşağıdaki gibidir:
-
+```dotenv
 # Veritabanı Ayarları
 DB_HOST=localhost            # Veritabanı sunucu adresi
 DB_USER=root                 # Veritabanı kullanıcı adı
@@ -32,7 +32,7 @@ EMAIL_PASS=ornekemailsifre        # SMTP e-posta şifresi veya uygulama şifresi
 
 # Frontend URL Ayarı
 FRONTEND_URL=http://localhost:3000  # Frontend uygulamanızın çalıştığı adres
-
+```
 Önemli Notlar
 
     .env dosyası kesinlikle public (herkesin erişebildiği) bir alanda paylaşılmamalıdır.
