@@ -79,7 +79,6 @@ bun ./test/testSeed.ts
 ardindan tekrar sunucuyu --watch ile başlatmanız önerilir
 --watch nodemon'un yaptığı işi yapmakta.
 
-
 Kullanılan Teknolojiler
 
     ORM Sequelize - Veritabani
@@ -91,7 +90,3 @@ Kullanılan Teknolojiler
     JWT → Kimlik doğrulama (Authentication)
 
     SMTP (Outlook) → E-posta gönderimi
-
-```
-
-```
