@@ -25,7 +25,7 @@ Projede çevresel değişkenler (environment variables) .env dosyası ile yönet
 # Veritabanı Ayarları
 DB_HOST=localhost            # Veritabanı sunucu adresi
 DB_USER=root                 # Veritabanı kullanıcı adı
-DB_PASSWORD=sb552003         # Veritabanı şifresi
+DB_PASSWORD=orneksifre         # Veritabanı şifresi
 DB_NAME=ecommerce_db         # Kullanılacak veritabanı ismi
 DB_DIALECT=mysql             # Veritabanı türü ('mysql' gibi)
 
@@ -78,6 +78,7 @@ bun ./test/testSeed.ts
 
 ardindan tekrar sunucuyu --watch ile başlatmanız önerilir
 --watch nodemon'un yaptığı işi yapmakta.
+
 
 Kullanılan Teknolojiler
 
