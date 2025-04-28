@@ -58,13 +58,13 @@ FRONTEND_URL -> ./controllers/authController.ts
 
 Hızlı Başlangıç Komutları
 
-# Bağımlılıkları yükleyin
+### Bağımlılıkları yükleyin
 
 ```
 bun install
 ```
 
-# Sunucuyu başlatın
+### Sunucuyu başlatın
 
 ```
 bun --watch index.ts
@@ -78,6 +78,17 @@ bun ./test/testSeed.ts
 
 ardindan tekrar sunucuyu --watch ile başlatmanız önerilir
 --watch nodemon'un yaptığı işi yapmakta.
+
+### **Routing Sistemi**
+
+#### **Endpoints:**
+
+- **Authentication**:
+  localhost:3000/api/auth/register
+  localhost:3000/api/auth/verify-email
+  localhost:3000/api/auth/login
+- **Home**:
+  localhost:3000/api/homepage
 
 Kullanılan Teknolojiler
 
