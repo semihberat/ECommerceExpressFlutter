@@ -1,5 +1,5 @@
 import { type Request, type Response, type NextFunction } from "express";
-import { User } from "../models/User"; // Adjust the path to the correct location of the User model
+import { User } from "../models/User";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { v4 as uuidv4 } from "uuid";
@@ -94,7 +94,7 @@ export const login = async (
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ where: { email }, raw: true });
+    const user = await User.findOne({ where: { email } });
     if (!user) {
       res.status(400).json({ message: "Invalid credentials" });
       return;
@@ -114,6 +114,9 @@ export const login = async (
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, {
       expiresIn: "1h",
     });
+
+    user.token = token; // ✅ token veritabanına kaydediliyor
+    await user.save();
 
     res.status(200).json({ token });
   } catch (error) {

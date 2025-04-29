@@ -1,7 +1,6 @@
 import { DataTypes, Model, type Optional } from "sequelize";
 import { sequelize } from "../config/dbConnect";
 
-// User tip tanımı
 interface UserAttributes {
   id: number;
   name: string;
@@ -11,9 +10,9 @@ interface UserAttributes {
   createdAt?: Date;
   isVerified?: boolean;
   verificationToken?: string;
+  token?: string; // ✅ eklendi
 }
 
-// Create sırasında 'id' ve 'createdAt' otomatik gelir
 type UserCreationAttributes = Optional<UserAttributes, "id" | "createdAt">;
 
 export class User
@@ -26,8 +25,9 @@ export class User
   public password!: string;
   public role!: "customer" | "admin";
   public readonly createdAt!: Date;
-  isVerified: boolean | undefined;
-  verificationToken: string | undefined;
+  public isVerified?: boolean;
+  public verificationToken?: string;
+  public token?: string; // ✅ eklendi
 }
 
 User.init(
@@ -66,12 +66,16 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    token: {
+      type: DataTypes.STRING, // ✅ eklendi
+      allowNull: true,
+    },
   },
   {
     sequelize,
     modelName: "User",
     tableName: "users",
     timestamps: true,
-    updatedAt: false, // sadece createdAt kullanılacak
+    updatedAt: false,
   }
 );
